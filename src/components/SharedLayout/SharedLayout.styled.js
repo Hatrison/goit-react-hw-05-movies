@@ -15,6 +15,7 @@ export const HeaderLine = styled.nav`
   display: flex;
   align-items: center;
   gap: 20px;
+  background-color: #fff;
   padding: 0 20px;
   border-bottom: 1px solid #a7a7a7;
   box-shadow: 0 3px 10px #a7a7a7;

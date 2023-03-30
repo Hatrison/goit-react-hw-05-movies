@@ -20,7 +20,6 @@ const Movie = () => {
     const fetchMovie = async () => {
       const movie = await getMovie(`/movie/${movieId}`);
       setMovie(movie);
-      console.log(movie);
     };
 
     fetchMovie();

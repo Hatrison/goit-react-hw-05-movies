@@ -2,13 +2,13 @@ import { Field, Formik } from 'formik';
 import getMovie from 'movieAPI';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { SubmitBtn, Form, Link, List } from './Search.styled';
+import { SubmitBtn, Form, Link, List } from './Movies.styled';
 
 const initialValues = {
   search: '',
 };
 
-const Search = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('search') ?? '';
   const [movies, setMovies] = useState([]);
@@ -55,4 +55,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Movies;

@@ -11,7 +11,7 @@ const Header = () => {
           <Link to="/" state={{ from: location }}>
             Home
           </Link>
-          <Link to="/search" state={{ from: location }}>
+          <Link to="/movies" state={{ from: location }}>
             Movies
           </Link>
         </HeaderLine>

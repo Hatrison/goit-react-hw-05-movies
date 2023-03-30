@@ -24,6 +24,7 @@ export const Link = styled(NavLink)`
   color: black;
   text-decoration: none;
   text-transform: uppercase;
+  padding: 10px;
 
   &.active {
     color: red;

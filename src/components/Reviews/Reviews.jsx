@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState();
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const Reviews = () => {
 
   return (
     <>
-      {reviews.length !== 0 && (
+      {reviews?.length !== 0 && (
         <ul>
-          {reviews.map(review => (
+          {reviews?.map(review => (
             <li key={review.id}>
               <h4>Author: {review.author}</h4>
               <p>{review.content}</p>
@@ -28,7 +28,7 @@ const Reviews = () => {
           ))}
         </ul>
       )}
-      {reviews.length === 0 && (
+      {reviews?.length === 0 && (
         <div>We don't have any reviews for this movie</div>
       )}
     </>

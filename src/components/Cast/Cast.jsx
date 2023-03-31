@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Image } from './Cast.styled';
 
 const Cast = () => {
-  const [cast, setCast] = useState([]);
+  const [cast, setCast] = useState();
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -19,9 +19,9 @@ const Cast = () => {
 
   return (
     <>
-      {cast.length !== 0 && (
+      {cast?.length !== 0 && (
         <ul>
-          {cast.map(actor => (
+          {cast?.map(actor => (
             <li key={actor.id}>
               <Image
                 src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
@@ -32,7 +32,7 @@ const Cast = () => {
           ))}
         </ul>
       )}
-      {cast.length === 0 && (
+      {cast?.length === 0 && (
         <div>We don't have any cast info for this movie</div>
       )}
     </>

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { HeaderLine, HeaderThumb, Link } from './SharedLayout.styled';
 
@@ -16,7 +17,9 @@ const Header = () => {
           </Link>
         </HeaderLine>
       </HeaderThumb>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

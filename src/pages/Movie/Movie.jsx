@@ -7,7 +7,7 @@ import {
   Link,
   MainContent,
 } from './Movie.styled';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import getMovie from 'movieAPI';
 
 const Movie = () => {
@@ -60,7 +60,9 @@ const Movie = () => {
               </li>
             </ul>
           </AdditionalContent>
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </>
       )}
     </main>
